@@ -3,25 +3,54 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground-rgb: 0, 0, 0; /* テキストの色（前景色） */
+  --background-rgb: 250, 246, 240;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground-rgb: 255, 255, 255; /* ダークモードでのテキストの色 */
+    --background-rgb: 50, 50, 50; /* ダークモードでの背景色 */
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: rgb(var(--foreground-rgb)); /* テキストの色を設定 */
+  background: rgb(var(--background-rgb)); /* 背景色を設定 */
+}
+
+.container {
+  text-align: center;
+}
+
+.image-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  cursor: pointer; /* 画像にクリックできることを示すカーソル */
+}
+
+.advice {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+  max-width: 500px;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.chat-bubble {
+  background-color: rgb(238, 203, 213) !important;
+  color: white !important;
 }

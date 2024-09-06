@@ -35,7 +35,7 @@ export default function Home() {
         <h1 className="text-4xl font-bold mt-20">Hello、おもちです</h1>
         <h2 className="text-2xl font-semibold mt-2 mb-8">このアプリでは、おもちに恋愛相談ができるよ</h2>
         <Link
-          href="/rabbit-facts"
+          href="/advice_room"
           className="btn flex items-center gap-2 px-4 py-2 text-black font-bold shadow-md hover:bg-opacity-80 active:bg-opacity-90 transition-all"
           style={{ backgroundColor: 'rgb(238, 203, 213)' }}
         >
