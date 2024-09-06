@@ -4,7 +4,7 @@
 
 :root {
   --foreground-rgb: 0, 0, 0; /* テキストの色（前景色） */
-  --background-rgb: 250, 246, 240;
+  --background-rgb: 250, 246, 240; /* デフォルトの背景色 */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,30 +18,38 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   display: flex;
+  flex-direction: column; /* 縦方向にレイアウト */
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; /* ビューポートの最小高さに設定 */
   color: rgb(var(--foreground-rgb)); /* テキストの色を設定 */
   background: rgb(var(--background-rgb)); /* 背景色を設定 */
+  padding: 0 1rem; /* サイドのパディングを追加 */
+  box-sizing: border-box; /* ボックスサイズにパディングを含める */
 }
 
 .container {
   text-align: center;
+  padding: 0 1rem; /* コンテナにパディングを追加 */
+  max-width: 100%;
 }
 
 .image-container {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 100%; /* 幅を100%に設定してレスポンシブ対応 */
+  max-width: 300px; /* 最大幅を300pxに設定 */
+  height: auto; /* 高さを自動調整 */
   margin: auto;
   cursor: pointer; /* 画像にクリックできることを示すカーソル */
 }
 
 .advice {
   margin-top: 20px;
-  font-size: 18px;
+  font-size: 1rem; /* フォントサイズをremで設定 */
   color: #333;
-  max-width: 500px;
+  max-width: 100%; /* 最大幅を100%に設定 */
+  margin-left: auto; /* 左右のマージンを自動設定 */
+  margin-right: auto; /* 左右のマージンを自動設定 */
 }
 
 @layer utilities {
@@ -53,4 +61,48 @@ body {
 .chat-bubble {
   background-color: rgb(238, 203, 213) !important;
   color: white !important;
+  border-radius: 1rem; /* チャットバブルの角を丸くする */
+  padding: 1rem; /* 内側のパディングを追加 */
+  max-width: 90%; /* 最大幅を90%に設定 */
+  margin: 0 auto; /* 中央に配置 */
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 0.5rem; /* タブレットではサイドのパディングを縮小 */
+  }
+
+  .advice {
+    font-size: 0.875rem; /* タブレットではフォントサイズを縮小 */
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 0 0.5rem; /* スマートフォンではサイドのパディングを縮小 */
+  }
+
+  .container {
+    padding: 0 0.25rem; /* スマートフォンではさらにサイドのパディングを縮小 */
+  }
+
+  .advice {
+    font-size: 0.75rem; /* スマートフォンではフォントサイズをさらに縮小 */
+  }
+
+  .image-container {
+    max-width: 200px; /* スマートフォンでは画像の最大幅を縮小 */
+  }
+
+  .chat-bubble {
+    padding: 0.75rem; /* スマートフォンではチャットバブルの内側のパディングを縮小 */
+    max-width: 95%; /* スマートフォンではチャットバブルの最大幅を広げる */
+  }
+}
+
+@media (max-width: 480px) {
+  .advice {
+    font-size: 0.625rem; /* 非常に小さなスクリーンではフォントサイズをさらに縮小 */
+  }
 }
