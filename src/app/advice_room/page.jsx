@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function RabbitFacts() {
   return (
@@ -8,14 +9,16 @@ export default function RabbitFacts() {
       <div className="mt-4 flex gap-4 justify-center">
         <div className="card card-compact bg-base-100 w-96 shadow-xl">
           <figure>
-            <img
+            <Image
               src="/bunny_heart.png" // ローカル画像を正しく参照
-              alt="chat"
+              alt="おもちの恋愛Botの画像"
+              width={400} // 画像の幅を指定
+              height={300} // 画像の高さを指定
             />
           </figure>
           <div className="card-body">
             <h2 className="card-title">おもちの恋愛Bot</h2>
-            <p>おもちにの独断と偏見で恋愛にまつわるあれこれをつぶやきます</p>
+            <p>おもちに独断と偏見で恋愛にまつわるあれこれをつぶやきます</p>
             <div className="card-actions justify-center mt-4">
               <Link
                 href="/bunny-bot"
@@ -43,9 +46,11 @@ export default function RabbitFacts() {
         </div>
         <div className="card card-compact bg-base-100 w-96 shadow-xl">
           <figure>
-            <img
+            <Image
               src="/bunny_with_phone.png" // ローカル画像を正しく参照
-              alt="chat"
+              alt="おもちの恋愛相談チャットの画像"
+              width={400} // 画像の幅を指定
+              height={300} // 画像の高さを指定
             />
           </figure>
           <div className="card-body">

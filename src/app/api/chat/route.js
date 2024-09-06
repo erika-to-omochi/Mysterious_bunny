@@ -19,8 +19,8 @@ export async function POST(req) {
     const response = await openai.chat.completions.create({
       model: "gpt-4",
       messages: [
-        { 
-          role: "system", 
+        {
+          role: "system",
           content: "あなたは愛に関するアドバイスをする姉御肌の賢いうさぎでちゅ。優しく、楽しく、そして親身になって相談にのってあげるでちゅよ。" 
         },
         { role: "user", content: message }
