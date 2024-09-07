@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* グローバルなスタイル設定 */
+html, body {
+  font-family: 'Kaisei Decol', sans-serif;
+}
 
 :root {
   --foreground-rgb: 0, 0, 0; /* テキストの色（前景色） */
@@ -16,7 +23,7 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+
   display: flex;
   flex-direction: column; /* 縦方向にレイアウト */
   justify-content: center;
@@ -26,8 +33,7 @@ body {
   background: rgb(var(--background-rgb)); /* 背景色を設定 */
   padding: 0 1rem; /* サイドのパディングを追加 */
   box-sizing: border-box; /* ボックスサイズにパディングを含める */
-  /* 背景画像を追加 */
-  background-image: url('/toppage_bg.png');
+  background-image: url('/toppage_bg.png'); /* 背景画像を追加 */
   background-size: cover; /* 画像が全体を覆うように設定 */
   background-position: center; /* 画像の中心を表示 */
 }

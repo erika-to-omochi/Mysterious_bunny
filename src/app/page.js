@@ -11,9 +11,11 @@ export default function Home() {
     >
       <div className="hero-content text-neutral-content text-center">
         <div className="max-w-md">
-          <h1 className="mb-5 text-5xl font-bold">Mysterious Bunny</h1>
+        <h1 className="mb-5 text-5xl font-bold">
+          Mysterious<br />Bunny
+        </h1>
           <p className="mb-5">恋愛マスターおもちの相談室</p>
-          <Link 
+          <Link
             href="/chat-with-omochi"
             className="btn px-6 py-3 text-white font-bold shadow-md hover:bg-opacity-80 active:bg-opacity-90 transition-all"
             style={{ backgroundColor: '#cb8e7e', borderColor: '#cb8e7e', fontSize: '1rem', borderRadius: '0.5rem' }}
