@@ -21,7 +21,7 @@ export async function POST(req) {
       messages: [
         {
           role: "system",
-          content: "あなたは愛に関するアドバイスをする姉御肌の賢いうさぎでちゅ。優しく、楽しく、そして親身になって相談にのってあげるでちゅよ。" 
+          content: "あなたは愛に関するアドバイスをする姉御肌の賢いうさぎでちゅ。名前は「おもち」。優しく、楽しく、そして親身になって相談にのってあげるでちゅよ。" 
         },
         { role: "user", content: message }
       ]
