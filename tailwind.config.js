@@ -13,6 +13,11 @@ module.exports = {
       },
     },
   },
+  daisyui: {
+    themes: [
+      'pastel',
+    ],
+  },
   plugins: [
     require('daisyui')
   ],
