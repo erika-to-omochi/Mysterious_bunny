@@ -11,6 +11,9 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        kaisei: ['Kaisei Decol', 'sans-serif'],
+      },
     },
   },
   daisyui: {
