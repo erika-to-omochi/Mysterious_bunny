@@ -29,7 +29,7 @@ export default function RomanceBot() {
 
   return (
     <div className="min-h-screen bg-[rgba(255,255,255,0.5)] flex flex-col items-center justify-center p-4">
-      <h1 className="text-4xl font-extrabold text-gray-800 mb-8">恋愛マスターおもちの相談室</h1>
+      <h1 className="text-4xl font-extrabold text-gray-800 mb-8">恋愛マスター<br />♥おもちの相談室♥</h1>
         {chatHistory.map((chat, index) => (
           <div
             key={index}
