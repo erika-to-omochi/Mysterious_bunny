@@ -16,7 +16,7 @@ export default function Home() {
         </h1>
           <p className="mb-5">恋愛マスターおもちの相談室</p>
           <Link
-            href="/chat-with-omochi"
+            href="/advice_room"
             className="btn px-6 py-3 text-white font-bold shadow-md hover:bg-opacity-80 active:bg-opacity-90 transition-all"
             style={{ backgroundColor: '#cb8e7e', borderColor: '#cb8e7e', fontSize: '1rem', borderRadius: '0.5rem' }}
           >
