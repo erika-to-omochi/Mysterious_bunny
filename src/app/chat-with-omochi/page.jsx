@@ -1,17 +1,21 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import Footer from '../../components/Footer';
+import ChatBubble from '../../components/ChatBubble'; // 新しいチャットバブルコンポーネントをインポート
 
 export default function RomanceBot() {
   const [message, setMessage] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
+  const chatContainerRef = useRef(null);
 
   const sendMessage = async () => {
     if (!message) return;
 
     // ユーザーのメッセージを履歴に追加
-    setChatHistory([...chatHistory, { role: 'user', content: message }]);
+    const newChatHistory = [...chatHistory, { role: 'user', content: message }];
+    setChatHistory(newChatHistory);
 
     // APIにメッセージを送信
     const res = await fetch('/api/chat', {
@@ -23,53 +27,32 @@ export default function RomanceBot() {
     });
 
     const data = await res.json();
-    setChatHistory([...chatHistory, { role: 'user', content: message }, { role: 'rabbit', content: data.reply }]);
+
+    // チャット履歴にAPIからの返答を追加
+    setChatHistory([...newChatHistory, { role: 'rabbit', content: data.reply }]);
     setMessage(''); // 送信後に入力フィールドをクリア
   };
+
+  // 新しいメッセージが追加されたら自動スクロール
+  useEffect(() => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    }
+  }, [chatHistory]);
 
   return (
     <div className="min-h-screen bg-[rgba(255,255,255,0.5)] flex flex-col items-center justify-center p-4">
       <h1 className="text-4xl font-extrabold text-gray-800 mb-8">恋愛マスター<br />♥おもちの相談室♥</h1>
+      
+      {/* チャットコンテナ */}
+      <div
+        ref={chatContainerRef}
+        className="w-full max-w-3xl h-[400px] overflow-y-auto p-4 bg-white rounded-lg shadow-lg mb-4"
+      >
         {chatHistory.map((chat, index) => (
-          <div
-            key={index}
-            className={`flex items-start ${chat.role === 'user' ? 'justify-end' : 'justify-start'} mb-4`}
-          >
-            {chat.role === 'rabbit' && (
-              <div className="chat-image avatar mr-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden">
-                  <Image
-                    alt="Rabbit avatar"
-                    src="/bunny.png" // 画像のパス
-                    layout="responsive"
-                    width={100} // 画像の幅
-                    height={100} // 画像の高さ
-                  />
-                </div>
-              </div>
-            )}
-            <div
-              className={`chat-bubble p-4 rounded-2xl shadow-lg text-left max-w-xs sm:max-w-sm md:max-w-md ${
-                chat.role === 'user' ? 'bg-gray-600 text-white' : 'bg-white text-gray-800'
-              }`}
-            >
-              {chat.content}
-            </div>
-            {chat.role === 'user' && (
-              <div className="chat-image avatar ml-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden">
-                  <Image
-                    alt="User avatar"
-                    src="/bunny.png" // 画像のパス
-                    layout="responsive"
-                    width={100} // 画像の幅
-                    height={100} // 画像の高さ
-                  />
-                </div>
-              </div>
-            )}
-          </div>
+          <ChatBubble key={index} chat={chat} />
         ))}
+      </div>
 
       <div className="mt-6 flex flex-col sm:flex-row sm:gap-4 w-full max-w-3xl">
         <input
@@ -85,6 +68,10 @@ export default function RomanceBot() {
         >
           送信
         </button>
+      </div>
+      
+      <div style={{ position: 'absolute', bottom: '0', width: '100%', zIndex: '10' }}>
+        <Footer />
       </div>
     </div>
   );
