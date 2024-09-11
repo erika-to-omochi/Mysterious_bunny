@@ -84,7 +84,7 @@ export default function AdviceRoom() {
 
           {/* タイトルと吹き出しのメッセージを横並びにする */}
           <div className="flex flex-col ml-4 sm:ml-6 md:ml-8 lg:ml-12 mt-10items-center"> {/* 吹き出しを中央に配置 */}
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-black text-center"> {/* タイトルを中央に配置 */}
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-black text-center text-[#645345]"> {/* タイトルを中央に配置 */}
               Hello, おもちでちゅ♥
             </h1>
             {/* 吹き出し（メッセージ表示エリア） */}

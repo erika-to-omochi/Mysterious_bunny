@@ -8,7 +8,7 @@ const ChatBubble = ({ chat }) => {
       {chat.role === 'rabbit' && (
         <div className="chat-image avatar mr-4">
           <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden">
-            <Image alt="Rabbit avatar" src="/bunny.png" layout="responsive" width={100} height={100} />
+            <Image alt="omochi01.png" src="/omochi01.png" layout="responsive" width={100} height={100} />
           </div>
         </div>
       )}

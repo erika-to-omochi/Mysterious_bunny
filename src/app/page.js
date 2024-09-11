@@ -11,10 +11,10 @@ export default function Home() {
     >
       <div className="hero-content text-neutral-content text-center">
         <div className="max-w-md">
-        <h1 className="mb-5 text-5xl font-bold">
+        <h1 className="mb-5 text-5xl font-bold text-[#645345]">
           Mysterious<br />Bunny
         </h1>
-          <p className="mb-5">恋愛マスターおもちの相談室</p>
+          <p className="mb-5 text-[#645345]">恋愛マスターおもちの相談室</p>
           <Link
             href="/advice_room"
             className="btn px-6 py-3 text-white font-bold shadow-md hover:bg-opacity-80 active:bg-opacity-90 transition-all"
