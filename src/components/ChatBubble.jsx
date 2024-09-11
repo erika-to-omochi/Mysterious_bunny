@@ -15,7 +15,7 @@ const ChatBubble = ({ chat }) => {
       {/* チャットメッセージ */}
       <div
         className={`chat-bubble p-4 rounded-2xl shadow-lg text-left max-w-xs sm:max-w-sm md:max-w-md ${
-          chat.role === 'user' ? 'bg-gray-600 text-white' : 'bg-white text-gray-800'
+          chat.role === 'user' ? 'bg-white text-gray-800' : 'bg-white text-gray-800'
         }`}
       >
         {chat.content}
