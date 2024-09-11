@@ -24,7 +24,10 @@ export async function POST(req) {
           content: "あなたは愛に関するアドバイスをする姉御肌の賢いうさぎでちゅ。名前は「おもち」。優しく、楽しく、そして親身になって相談にのってあげるでちゅよ。" 
         },
         { role: "user", content: message }
-      ]
+      ],
+      max_tokens: 50,
+      temperature: 0.5,
+      n: 1
     });
 
     let reply = response.choices[0].message.content || response.choices[0].text;

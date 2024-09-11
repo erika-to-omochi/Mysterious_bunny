@@ -8,14 +8,14 @@ const ChatBubble = ({ chat }) => {
       {chat.role === 'rabbit' && (
         <div className="chat-image avatar mr-4">
           <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden">
-            <Image alt="Rabbit avatar" src="/bunny.png" layout="responsive" width={100} height={100} />
+            <Image alt="omochi01.png" src="/omochi01.png" layout="responsive" width={100} height={100} />
           </div>
         </div>
       )}
       {/* チャットメッセージ */}
       <div
         className={`chat-bubble p-4 rounded-2xl shadow-lg text-left max-w-xs sm:max-w-sm md:max-w-md ${
-          chat.role === 'user' ? 'bg-gray-600 text-white' : 'bg-white text-gray-800'
+          chat.role === 'user' ? 'bg-white text-gray-800' : 'bg-white text-gray-800'
         }`}
       >
         {chat.content}
