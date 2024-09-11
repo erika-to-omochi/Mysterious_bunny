@@ -31,7 +31,7 @@ const Footer = () => {
       </nav>
       <nav className="mx-2">
         <button
-          onClick={() => router.push('#')}
+          onClick={() => router.push('/omochi_bot')}
           type="button"
           className="flex items-center p-2 bg-[#cb8e7e] text-white font-bold rounded-lg shadow-lg hover:bg-[#b77a6b] hover:scale-105 transition-all duration-300 sm:p-3 sm:text-lg md:p-4 md:text-xl"
         >
