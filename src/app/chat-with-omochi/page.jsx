@@ -59,21 +59,22 @@ export default function RomanceBot() {
       </div>
 
       {/* 入力エリア */}
-      <div className="flex flex-col sm:flex-row sm:gap-4 w-full max-w-xs sm:max-w-md md:max-w-3xl lg:max-w-4xl mb-4 mx-auto">
-        <input
-          type="text"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          className="border border-gray-300 px-4 py-2 w-full mb-2 sm:mb-0 sm:w-3/4 rounded-xl focus:ring-2 focus:ring-custom-color outline-none transition-all duration-200"
-          placeholder="恋愛相談を書いてください..."
-        />
-        <button
-          onClick={sendMessage}
-          className="btn px-4 py-2 w-full sm:w-1/4 rounded-xl bg-[#cb8e7e] text-white shadow-lg hover:bg-[#b77a6b] transition-transform transform hover:scale-105 duration-200"
-        >
-          送信
-        </button>
-      </div>
+      <div className="flex items-center gap-2 p-4">
+  <input
+    type="text"
+    value={message}
+    onChange={(e) => setMessage(e.target.value)}
+    className="border border-gray-300 px-4 py-2 w-full sm:w-2/3 md:w-3/4 lg:w-5/6 rounded-xl focus:ring-2 focus:ring-custom-color outline-none transition-all duration-200"
+    placeholder="恋愛相談を書いてください..."
+  />
+  <button
+    onClick={sendMessage}
+    className="btn px-4 py-2 w-auto sm:w-1/3 md:w-1/4 lg:w-1/6 rounded-xl bg-[#cb8e7e] text-white shadow-lg hover:bg-[#b77a6b] transition-transform transform hover:scale-105 duration-200"
+  >
+    送信
+  </button>
+</div>
+
 
       {/* フッター */}
       <Footer />
