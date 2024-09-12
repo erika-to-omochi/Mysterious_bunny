@@ -13,22 +13,7 @@ export default function AdviceRoom() {
   const fixedMessages = [
     "ようこそでちゅ<br/>おもちにタッチしてね♥",
     "このアプリではおもちが独断と偏見で、<br/>恋愛について語ったり<br/>アドバイスをするでちゅ",
-    "①おもちにCHATで恋愛相談にのってもらうこと<br/>②おもちの恋愛Botを見ること<br/>この２つができるでちゅ",
-    "このままおもちにタッチしていると<br/>おもちのことや、うさぎのことについて<br/>おしえてあげるでちゅよ",
-    "おもちの歯は一生伸び続けるよ",
-    "おもちはお鼻でツンツンするよ",
-    "おもち、胃は弱いよ",
-    "怒った時は足ダンするよ",
-    "おもち、視野はほぼ360度あるよ",
-    "うさぎは最大３ｍくらい飛ぶぞ",
-    "おもちの歯は２８本あるよ",
-    "おもちはリーダー気質だよ",
-    "おもちの耳は体温調整もしてるよ",
-    "おもちの好物はりんごだよ",
-    "おもちの特技は気配を消すことだよ",
-    "将来の夢はアナウンサーだよ",
-    "おもち将来は野球選手と結婚したいな〜",
-    "趣味はYogiboホリホリだよ"
+    "①おもちにCHATで恋愛相談にのってもらうこと<br/>②おもちの恋愛Botを見ること<br/>ができるから下のボタンをクリックしてね",
   ];
 
   useEffect(() => {
@@ -60,9 +45,9 @@ export default function AdviceRoom() {
         fill
         style={{ objectFit: 'cover' }}
         priority
-        className="z-0" // 背景画像の z-index を設定
+        className="z-0"
       />
-  <div className="relative flex flex-col md:flex-row h-screen items-center justify-center px-4 md:px-8 lg:px-12 z-10"> {/* z-index を設定して前面に表示 */}
+  <div className="relative flex flex-col md:flex-row h-screen items-center justify-center px-4 md:px-8 lg:px-12 z-10">
     {/* メインコンテンツ */}
     <div className="flex flex-col md:flex-row items-center justify-center" onClick={handleNextMessage}>
       {/* 画像 */}
@@ -80,7 +65,7 @@ export default function AdviceRoom() {
 
       {/* タイトルと吹き出しのメッセージを横並びにする */}
       <div className="flex flex-col ml-4 sm:ml-6 md:ml-8 lg:ml-12 mt-10 items-center z-10"> {/* 吹き出しを中央に配置 */}
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-black text-center text-[#645345]"> {/* タイトルを中央に配置 */}
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center text-[#645345]">
           Hello, おもちでちゅ♥
         </h1>
         {/* 吹き出し（メッセージ表示エリア） */}
