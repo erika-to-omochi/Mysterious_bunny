@@ -26,7 +26,7 @@ const Footer = () => {
           className="flex items-center p-2 bg-[#cb8e7e] text-white font-bold rounded-lg shadow-lg hover:bg-[#b77a6b] hover:scale-105 transition-all duration-300 sm:p-3 sm:text-lg md:p-4 md:text-xl"
         >
           <PiRabbitLight className="mr-2" />
-          <span>相談室</span>
+          <span>CHAT</span>
         </button>
       </nav>
       <nav className="mx-2">
@@ -36,7 +36,7 @@ const Footer = () => {
           className="flex items-center p-2 bg-[#cb8e7e] text-white font-bold rounded-lg shadow-lg hover:bg-[#b77a6b] hover:scale-105 transition-all duration-300 sm:p-3 sm:text-lg md:p-4 md:text-xl"
         >
           <PiRabbitLight className="mr-2" />
-          <span>恋愛BOT</span>
+          <span>BOT</span>
         </button>
       </nav>
     </footer>
