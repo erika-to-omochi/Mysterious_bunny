@@ -1,15 +1,20 @@
+'use client';  // クライアントコンポーネントを宣言
+
+import { useRouter } from 'next/navigation';  // next/navigation からインポート
 import Footer from '@/components/Footer';
 import Image from 'next/image';
 import React from 'react';
 
 export default function OmochiLoveBot() {
+  const router = useRouter();  // routerを定義
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Main content area that takes up remaining space */}
       <div className="flex flex-col items-center justify-center flex-grow p-10">
         {/* Title */}
-        <h1 className="text-4xl font-bold text-[#645345] mb-10 text-center">
-          (※ 準備中)おもちの恋愛BOT
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#645345] text-center mb-8">
+          おもちの恋愛BOT
         </h1>
 
         {/* Cards Section */}
@@ -17,17 +22,23 @@ export default function OmochiLoveBot() {
           {/* Card 1 */}
           <div className="bg-[rgba(255,255,255,0.5)] bg-opacity-90 p-6 rounded-xl shadow-md text-center">
             <Image src="/omochi04.png" width={150} height={150} alt="Rabbit 1" className="mx-auto mb-4" />
-            <h2 className="font-bold mb-2">みんなの気持ちを代弁</h2>
+            <h2 className="font-bold mb-2">おもちの恋愛クイズ</h2>
             <p>
-              みんなの意見も募集してまちゅ。普段は言いにくいパートナーへの不満や、言われて傷ついたことなどを、おもちが代弁しまちゅ！
+              おもちの恋愛観や気をつけていることを、クイズにしたでちゅ。人間にも共通することがあるかもしれないから、みんなに教えちゃうでちゅ。
             </p>
+            <button
+              onClick={() => router.push('/omochi_love')}  // ここでrouter.pushを使用してページ遷移
+              className="mt-4 px-4 py-2 bg-[#cb8e7e] text-white rounded-lg shadow-lg hover:bg-[#b77a6b] transition-all"
+            >
+              もっと見る
+            </button>
           </div>
 
           {/* Card 2 */}
           <div className="bg-[rgba(255,255,255,0.5)] bg-opacity-90 p-6 rounded-xl shadow-md text-center">
             <Image src="/omochi05.png" width={150} height={150} alt="Rabbit 2" className="mx-auto mb-4" />
             <h2 className="font-bold mb-2">モテるテクニック</h2>
-            <p>おもち直伝！モテるテクニックを伝授するでちゅ。</p>
+            <p>おもち直伝！おもちの可愛さと、おもちがかわいい理由を伝授するでちゅ。</p>
           </div>
 
           {/* Card 3 */}

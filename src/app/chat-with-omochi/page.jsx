@@ -42,41 +42,39 @@ export default function RomanceBot() {
   return (
     <div className="min-h-screen flex flex-col justify-between">
       {/* タイトル */}
-      <div className="p-4 sm:p-6 md:p-8 lg:p-10">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#645345] mt-8 text-center">
+      <div className="p-2 sm:p-4 md:p-6 lg:p-8"> {/* 余白を少なく */}
+        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 text-center text-[#645345]">
           恋愛マスター<br />おもちの相談室♥
         </h1>
       </div>
 
-      {/* チャットコンテナ（固定高さ） */}
+      {/* チャットコンテナ（高さを広げ、余白を減らす） */}
       <div
         ref={chatContainerRef}
-        className="w-full max-w-lg sm:max-w-xl md:max-w-3xl lg:max-w-5xl h-[325px] sm:h-[250px] md:h-[300px] lg:h-[350px] overflow-x-auto p-4 bg-[rgba(255,255,255,0.3)] rounded-lg shadow-lg sm:mb-2 md:mb-6 mx-auto"
-        >
+        className="w-full max-w-7xl flex-grow h-[65vh] overflow-y-auto p-2 sm:p-4 bg-[rgba(255,255,255,0.3)] rounded-lg shadow-lg mx-auto" // 高さを65vhに設定
+      >
         {chatHistory.map((chat, index) => (
           <ChatBubble key={index} chat={chat} />
         ))}
       </div>
 
-      {/* 入力エリア */}
-      <div className="flex items-center gap-2 p-4">
-  <input
-    type="text"
-    value={message}
-    onChange={(e) => setMessage(e.target.value)}
-    className="border border-gray-300 px-4 py-2 w-full sm:w-2/3 md:w-3/4 lg:w-5/6 rounded-xl focus:ring-2 focus:ring-custom-color outline-none transition-all duration-200"
-    placeholder="恋愛相談を書いてください..."
-  />
-  <button
-    onClick={sendMessage}
-    className="btn px-4 py-2 w-auto sm:w-1/3 md:w-1/4 lg:w-1/6 rounded-xl bg-[#cb8e7e] text-white shadow-lg hover:bg-[#b77a6b] transition-transform transform hover:scale-105 duration-200"
-  >
-    送信
-  </button>
-</div>
+      {/* 入力エリア（余白を減らしてフッターに近づける） */}
+      <div className="flex items-center gap-2 p-2 sm:p-4 border-t border-gray-300">
+        <input
+          type="text"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          className="border border-gray-300 px-3 py-2 w-full rounded-xl focus:ring-2 focus:ring-custom-color outline-none transition-all duration-200"
+          placeholder="恋愛相談を書いてください..."
+        />
+        <button
+          onClick={sendMessage}
+          className="px-3 py-2 rounded-xl bg-[#cb8e7e] text-white shadow-lg hover:bg-[#b77a6b] transition-transform transform hover:scale-105 duration-200"
+        >
+          送信
+        </button>
+      </div>
 
-
-      {/* フッター */}
       <Footer />
     </div>
   );
