@@ -43,7 +43,7 @@ export default function RomanceBot() {
     <div className="min-h-screen flex flex-col justify-between">
       {/* タイトル */}
       <div className="p-4 sm:p-6 md:p-8 lg:p-10">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#645345] mb-4 sm:mb-6 md:mb-8 text-center">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#645345] mt-8 text-center">
           恋愛マスター<br />おもちの相談室♥
         </h1>
       </div>
@@ -51,8 +51,8 @@ export default function RomanceBot() {
       {/* チャットコンテナ（固定高さ） */}
       <div
         ref={chatContainerRef}
-        className="w-full max-w-xs sm:max-w-md md:max-w-3xl lg:max-w-4xl h-[400px] sm:h-[500px] overflow-y-auto p-4 bg-[rgba(255,255,255,0.3)] rounded-lg shadow-lg mb-4 sm:mb-6 md:mb-8 mx-auto"
-      >
+        className="w-full max-w-lg sm:max-w-xl md:max-w-3xl lg:max-w-5xl h-[325px] sm:h-[250px] md:h-[300px] lg:h-[350px] overflow-x-auto p-4 bg-[rgba(255,255,255,0.3)] rounded-lg shadow-lg sm:mb-2 md:mb-6 mx-auto"
+        >
         {chatHistory.map((chat, index) => (
           <ChatBubble key={index} chat={chat} />
         ))}
