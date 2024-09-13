@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         <meta name="twitter:image" content="https://mysterious-bunny.vercel.app/ogc_image.png" />
         <meta name="twitter:url" content="https://mysterious-bunny.vercel.app/" />
       </Head>
-
+      
       <body>
         {/* 左上のロゴ画像 */}
         <div className="absolute top-0 left-0 p-4 z-20">
