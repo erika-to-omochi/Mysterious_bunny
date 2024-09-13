@@ -11,48 +11,42 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
-        {/* 基本的なメタタグ */}
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <body>
+        <Head>
+          {/* Open Graphメタタグ */}
+          <meta property="og:title" content="Mysterious Bunny" />
+          <meta property="og:description" content="恋愛系マスターおもちの相談室" />
+          <meta property="og:image" content="https://mysterious-bunny.vercel.app/ogc_image.png" />
+          <meta property="og:url" content="https://mysterious-bunny.vercel.app/" />
+          <meta property="og:type" content="website" />
 
-        {/* Open Graphメタタグ */}
-        <meta property="og:title" content="Mysterious Bunny" />
-        <meta property="og:description" content="恋愛系マスターおもちの相談室" />
-        <meta property="og:image" content="https://mysterious-bunny.vercel.app/ogc_image.png" />
-        <meta property="og:url" content="https://mysterious-bunny.vercel.app/" />
-        <meta property="og:type" content="website" />
+          {/* Twitterカードメタタグ */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Mysterious Bunny" />
+          <meta name="twitter:description" content="恋愛系マスターおもちの相談室" />
+          <meta name="twitter:image" content="https://mysterious-bunny.vercel.app/ogc_image.png" />
+          <meta name="twitter:url" content="https://mysterious-bunny.vercel.app/" />
+        </Head>
 
-        {/* Twitterカードメタタグ */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Mysterious Bunny" />
-        <meta name="twitter:description" content="恋愛系マスターおもちの相談室" />
-        <meta name="twitter:image" content="https://mysterious-bunny.vercel.app/ogc_image.png" />
-        <meta name="twitter:url" content="https://mysterious-bunny.vercel.app/" />
+        {/* 左上のロゴ画像 */}
+        <div className="absolute top-0 left-0 p-4 z-20">
+          <Link href="/" passHref>
+            <Image
+              src="/title_logo.png"
+              alt="Title Logo"
+              width={150}
+              height={50}
+              className="w-[100px] h-auto sm:w-[100px] md:w-[160px] lg:w-[175px]"
+              priority
+            />
+          </Link>
+        </div>
 
-        {/* ページのタイトルと説明 */}
-        <title>Mysterious Bunny</title>
-        <meta name="description" content="The Bunny Offers Relationship Tips" />
-      </Head>
-
-      {/* 左上のロゴ画像 */}
-      <div className="absolute top-0 left-0 p-4 z-20">
-        <Link href="/" passHref>
-          <Image
-            src="/title_logo.png"
-            alt="Title Logo"
-            width={150}
-            height={50}
-            className="w-[100px] h-auto sm:w-[100px] md:w-[160px] lg:w-[175px]"
-            priority
-          />
-        </Link>
-      </div>
-
-      {/* ページの内容 */}
-      <div className="flex flex-col min-h-screen">
-        {children}
-      </div>
+        {/* ページの内容 */}
+        <div className="flex flex-col min-h-screen">
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
