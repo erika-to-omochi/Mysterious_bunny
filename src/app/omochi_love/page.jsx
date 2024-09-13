@@ -69,7 +69,7 @@ const OmochiLoveQuiz = () => {
 
   // Twitter共有用リンクの作成
   const tweetText = `おもちの恋愛クイズで${score}問正解したよ！ #おもちクイズ`;
-  const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
+  const tweetUrl = `https://twitter.com/intent/tweet?url=https://mysterious-bunny.vercel.app/&text=${encodeURIComponent(tweetText)}`;
 
   return (
     <div className="flex flex-col h-screen">
@@ -117,7 +117,7 @@ const OmochiLoveQuiz = () => {
             >
               <p className="text-sm sm:text-base lg:text-base text-gray-800 mb-3">クイズが終わりました！正解数: {score}</p>
               <a
-                href={`https://twitter.com/intent/tweet?url=https://mysterious-bunny.vercel.app/&text=クイズが終わりました！正解数: ${score}`}
+                href={tweetUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-3 py-2 bg-black text-white rounded-lg shadow-lg hover:bg-gray-800 transition-all text-xs sm:text-sm lg:text-base"
