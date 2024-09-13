@@ -1,11 +1,33 @@
 import './globals.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import Head from 'next/head';
+import Head from 'next/head'; // 修正: `Head` を使用
 
 export const metadata = {
   title: "Mysterious Bunny",
   description: "The Bunny Offers Relationship Tips",
+  openGraph: {
+    title: "Mysterious Bunny",
+    description: "恋愛系マスターおもちの相談室",
+    images: [
+      {
+        url: "https://mysterious-bunny.vercel.app/ogc_image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    url: "https://mysterious-bunny.vercel.app/",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mysterious Bunny",
+    description: "恋愛系マスターおもちの相談室",
+    images: [
+      "https://mysterious-bunny.vercel.app/ogc_image.png",
+    ],
+    url: "https://mysterious-bunny.vercel.app/",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -13,20 +35,19 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Head>
         {/* Open Graphメタタグ */}
-        <meta property="og:title" content="Mysterious Bunny" />
-        <meta property="og:description" content="恋愛系マスターおもちの相談室" />
-        <meta property="og:image" content="https://mysterious-bunny.vercel.app/ogc_image.png" />
-        <meta property="og:url" content="https://mysterious-bunny.vercel.app/" />
-        <meta property="og:type" content="website" />
+        <meta property="og:title" content={metadata.openGraph.title} />
+        <meta property="og:description" content={metadata.openGraph.description} />
+        <meta property="og:image" content={metadata.openGraph.images[0].url} />
+        <meta property="og:url" content={metadata.openGraph.url} />
+        <meta property="og:type" content={metadata.openGraph.type} />
 
         {/* Twitterカードメタタグ */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Mysterious Bunny" />
-        <meta name="twitter:description" content="恋愛系マスターおもちの相談室" />
-        <meta name="twitter:image" content="https://mysterious-bunny.vercel.app/ogc_image.png" />
-        <meta name="twitter:url" content="https://mysterious-bunny.vercel.app/" />
+        <meta name="twitter:card" content={metadata.twitter.card} />
+        <meta name="twitter:title" content={metadata.twitter.title} />
+        <meta name="twitter:description" content={metadata.twitter.description} />
+        <meta name="twitter:image" content={metadata.twitter.images[0]} />
+        <meta name="twitter:url" content={metadata.twitter.url} />
       </Head>
-      
       <body>
         {/* 左上のロゴ画像 */}
         <div className="absolute top-0 left-0 p-4 z-20">
