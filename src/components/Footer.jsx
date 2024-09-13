@@ -16,7 +16,7 @@ export default function Footer() {
         style={{ height: '56px' }}  // ボタンの高さを固定
       >
         <PiRabbitLight className="mr-2" />
-        <span>HOME</span>
+        <span>Home</span>
       </button>
 
       {/* 相談CHATボタン */}
@@ -27,7 +27,7 @@ export default function Footer() {
         style={{ height: '56px' }}  // ボタンの高さを固定
       >
         <PiRabbitLight className="mr-2" />
-        <span>相談CHAT</span>
+        <span>相談Chat</span>
       </button>
 
       {/* 恋愛BOTボタン */}
@@ -38,7 +38,7 @@ export default function Footer() {
         style={{ height: '56px' }}  // ボタンの高さを固定
       >
         <PiRabbitLight className="mr-2" />
-        <span>恋愛BOT</span>
+        <span>恋愛Bot</span>
       </button>
     </footer>
   );
