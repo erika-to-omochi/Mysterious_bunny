@@ -1,7 +1,7 @@
 'use client';  // クライアントコンポーネントを宣言
 
 import { useRouter } from 'next/navigation';  // next/navigation からインポート
-import Footer from '@/components/Footer';
+import Footer from '../../components/Footer';
 import Image from 'next/image';
 import React from 'react';
 
