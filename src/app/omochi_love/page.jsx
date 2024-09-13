@@ -14,7 +14,7 @@ const questions = [
   },
   {
     question: "おもちが好意をアピールするときはどうしてる？",
-    options: ["鼻でツンツンする", "お手をする", "「きゅう〜」と鳴く"],
+    options: ["お手をする", "「きゅう〜」と鳴く", "鼻でツンツンする"],
     correct: "鼻でツンツンする",
   },
   {
@@ -24,7 +24,7 @@ const questions = [
   },
   {
     question: "おもちが思う長続きするカップルの秘訣は？",
-    options: ["お互いの時間を大切にする", "頻繁にコミュニケーションをとる", "お互いの趣味を共有する"],
+    options: ["お互いの時間を大切にする", "お互いの趣味を共有する", "頻繁にコミュニケーションをとる"],
     correct: "頻繁にコミュニケーションをとる",
   },
   {
@@ -72,37 +72,37 @@ const OmochiLoveQuiz = () => {
   const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
 
   return (
-    <div className="flex flex-col min-h-screen justify-between">
+    <div className="flex flex-col h-screen">
       {/* コンテンツ部分 */}
-      <div className="flex-grow flex flex-col lg:flex-row justify-center items-center p-4 sm:p-6 lg:p-10">
-        <div className="relative w-full lg:w-1/2 flex justify-center items-center">
-          <div className="w-3/4 sm:w-1/2 lg:w-full h-auto">
+      <div className="flex-grow flex lg:flex-row justify-center items-center p-4 sm:p-6 lg:p-8 overflow-y-auto">
+        <div className="relative w-full lg:w-1/3 flex justify-center items-center">
+          <div className="w-2/3 lg:w-full h-auto">
             <Image
               src="/omochi07.png"
               alt="Omochi"
-              layout="responsive" // 画像のレスポンシブ表示
-              width={500}
-              height={500}
+              layout="responsive"
+              width={250}  // 画像の幅を調整
+              height={250} // 画像の高さを調整
               className="object-cover w-full h-auto"
             />
           </div>
         </div>
 
-        {/* 右側：クイズの吹き出し */}
-        <div className="relative w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start p-4 lg:p-8 flex-grow">
+        {/* クイズ吹き出し */}
+        <div className="relative w-full lg:w-1/3 flex flex-col justify-center items-center lg:items-start p-4 lg:p-6 flex-grow">
           {!quizFinished ? (
             <motion.div
-              className="p-5 bg-[rgba(255,255,255,0.5)] rounded-lg shadow-lg w-full sm:w-3/4 lg:w-full text-center"
+              className="p-3 bg-[rgba(255,255,255,0.5)] rounded-lg shadow-lg w-full text-center"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <p className="text-xs sm:text-sm lg:text-lg text-gray-800 mb-4">{currentQuestion?.question}</p>
+              <p className="text-xs sm:text-sm lg:text-base text-gray-800 mb-3">{currentQuestion?.question}</p>
               {currentQuestion?.options.map((option, index) => (
                 <button
                   key={index}
                   onClick={() => handleAnswer(option)}
-                  className="block w-full mb-3 px-3 py-2 bg-[#cb8e7e] text-white rounded-lg shadow-lg hover:bg-[#b77a6b] transition-all text-xs sm:text-sm lg:text-lg"
+                  className="block w-full mb-2 px-3 py-1 bg-[#cb8e7e] text-white rounded-lg shadow-lg hover:bg-[#b77a6b] transition-all text-xs sm:text-sm lg:text-base"
                 >
                   {option}
                 </button>
@@ -110,17 +110,18 @@ const OmochiLoveQuiz = () => {
             </motion.div>
           ) : (
             <motion.div
-              className="text-center w-full sm:w-3/4 lg:w-full"
+              className="p-3 bg-[rgba(255,255,255,0.5)] rounded-lg shadow-lg text-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <p className="text-sm sm:text-base lg:text-lg text-gray-800 mb-4">クイズが終わりました！正解数: {score}</p>
+              <p className="text-sm sm:text-base lg:text-base text-gray-800 mb-3">クイズが終わりました！正解数: {score}</p>
               <a
-                href={tweetUrl}
+                href={`https://twitter.com/intent/tweet?url=https://mysterious-bunny.vercel.app/&text=クイズが終わりました！正解数: ${score}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3 py-2 bg-black text-white rounded-lg shadow-lg hover:bg-gray-800 transition-all text-xs sm:text-sm lg:text-lg"
+                className="px-3 py-2 bg-black text-white rounded-lg shadow-lg hover:bg-gray-800 transition-all text-xs sm:text-sm lg:text-base"
+                style={{ height: '150px' }}
               >
                 Xで共有する
               </a>
@@ -129,7 +130,7 @@ const OmochiLoveQuiz = () => {
         </div>
       </div>
 
-      {/* Footerをページ下部に固定 */}
+      {/* フッター */}
       <Footer />
     </div>
   );
