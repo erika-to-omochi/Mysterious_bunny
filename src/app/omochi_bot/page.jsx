@@ -39,6 +39,12 @@ export default function OmochiLoveBot() {
             <Image src="/omochi05.png" width={150} height={150} alt="Rabbit 2" className="mx-auto mb-4" />
             <h2 className="font-bold mb-2">モテるテクニック</h2>
             <p>おもち直伝！おもちの可愛さと、おもちがかわいい理由を伝授するでちゅ。</p>
+            <button
+              onClick={() => alert('リンク先はまだ準備中です')}
+              className="mt-4 px-4 py-2 bg-[#cb8e7e] text-white rounded-lg shadow-lg hover:bg-[#b77a6b] transition-all"
+            >
+              準備中
+            </button>
           </div>
 
           {/* Card 3 */}
@@ -48,6 +54,12 @@ export default function OmochiLoveBot() {
             <p>
               恋する気持ちがどんなのか、おもちの独断と偏見でつぶやくでちゅ。おもち、ポエムとか好きなんだよね〜
             </p>
+            <button
+              onClick={() => alert('リンク先はまだ準備中です')}
+              className="mt-4 px-4 py-2 bg-[#cb8e7e] text-white rounded-lg shadow-lg hover:bg-[#b77a6b] transition-all"
+            >
+              準備中
+            </button>
           </div>
         </div>
       </div>
