@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import Footer from '@/components/Footer'; // Footerのインポート
+import Footer from '../../components/Footer'; // Footerのインポート
 
 // クイズの質問と選択肢
 const questions = [
