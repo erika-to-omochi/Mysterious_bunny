@@ -1,9 +1,8 @@
+
 import './globals.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import Head from 'next/head';
 import Script from 'next/script';
-import * as gtag from '../lib/gtag';
 
 export const metadata = {
   title: "Mysterious Bunny",
@@ -35,7 +34,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         {/* Open Graphメタタグ */}
         <meta property="og:title" content={metadata.openGraph.title} />
         <meta property="og:description" content={metadata.openGraph.description} />
@@ -49,26 +48,26 @@ export default function RootLayout({ children }) {
         <meta name="twitter:description" content={metadata.twitter.description} />
         <meta name="twitter:image" content={metadata.twitter.images[0]} />
         <meta name="twitter:url" content={metadata.twitter.url} />
-      </Head>
+      </head>
       <body>
+        {/* Google Analyticsのスクリプト */}
         <Script
-            strategy="afterInteractive"
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-          />
-          <Script
-            id="gtag-init"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
-                  page_path: window.location.pathname,
-                });
-              `,
-            }}
-          />
+          id="gtag-script"
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=G-F5LB1B077N`}
+        />
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-F5LB1B077N');
+            `,
+          }}
+        />
         {/* 左上のロゴ画像 */}
         <div className="absolute top-0 left-0 p-4 z-20">
           <Link href="/" passHref>
