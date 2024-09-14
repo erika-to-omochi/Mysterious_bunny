@@ -3,9 +3,8 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import Footer from '../../components/Footer'; // Footerのインポート
+import Footer from '../../components/Footer';
 
-// クイズの質問と選択肢
 const questions = [
   {
     question: "おもちが相手に良い印象を与えるためにしていることは？",
@@ -67,8 +66,8 @@ const OmochiLoveQuiz = () => {
     setQuestionIndex(questionIndex + 1);
   };
 
-  // Twitter共有用リンクの作成
-  const tweetText = `おもちの恋愛クイズで${score}問正解したよ！ #おもちクイズ`;
+  // Twitter共有用リンク
+  const tweetText = `おもちの恋愛クイズで${score}問正解したよ！ #おもちクイズ  #RUNTEQ祭`;
   const tweetUrl = `https://twitter.com/intent/tweet?url=https://mysterious-bunny.vercel.app/&text=${encodeURIComponent(tweetText)}`;
 
   return (
@@ -81,8 +80,8 @@ const OmochiLoveQuiz = () => {
               src="/omochi07.png"
               alt="Omochi"
               layout="responsive"
-              width={250}  // 画像の幅を調整
-              height={250} // 画像の高さを調整
+              width={250}
+              height={250}
               className="object-cover w-full h-auto"
             />
           </div>
@@ -92,25 +91,27 @@ const OmochiLoveQuiz = () => {
         <div className="relative w-full lg:w-1/3 flex flex-col justify-center items-center lg:items-start p-4 lg:p-6 flex-grow">
           {!quizFinished ? (
             <motion.div
-              className="p-3 bg-[rgba(255,255,255,0.5)] rounded-lg shadow-lg w-full text-center"
+              className="p-3 bg-[rgba(255,255,255,0.5)] rounded-lg shadow-lg w-full text-center max-w-[450px] min-h-[200px]"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <p className="text-xs sm:text-sm lg:text-base text-gray-800 mb-3">{currentQuestion?.question}</p>
-              {currentQuestion?.options.map((option, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleAnswer(option)}
-                  className="block w-full mb-2 px-3 py-1 bg-[#cb8e7e] text-white rounded-lg shadow-lg hover:bg-[#b77a6b] transition-all text-xs sm:text-sm lg:text-base"
-                >
-                  {option}
-                </button>
-              ))}
+              <p className="text-xs sm:text-sm lg:text-base text-gray-800 mb-6">{currentQuestion?.question}</p>
+              <div className="flex flex-col items-center">
+                {currentQuestion?.options.map((option, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleAnswer(option)}
+                    className="block w-full mb-2 px-3 py-1 bg-[#cb8e7e] text-white rounded-lg shadow-lg hover:bg-[#b77a6b] transition-all text-xs sm:text-sm lg:text-base max-w-[300px]" // ボタンの最大幅を設定
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
             </motion.div>
           ) : (
             <motion.div
-              className="p-3 bg-[rgba(255,255,255,0.5)] rounded-lg shadow-lg text-center"
+              className="p-3 bg-[rgba(255,255,255,0.5)] rounded-lg shadow-lg text-center max-w-[350px]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -129,8 +130,6 @@ const OmochiLoveQuiz = () => {
           )}
         </div>
       </div>
-
-      {/* フッター */}
       <Footer />
     </div>
   );

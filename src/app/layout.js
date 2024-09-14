@@ -11,7 +11,7 @@ export const metadata = {
     description: "恋愛系マスターおもちの相談室",
     images: [
       {
-        url: "https://mysterious-bunny.vercel.app/ogc_image.png",
+        url: "https://mysterious-bunny.vercel.app/ogp.png",
         width: 1200,
         height: 630,
       },
@@ -24,7 +24,7 @@ export const metadata = {
     title: "Mysterious Bunny",
     description: "恋愛系マスターおもちの相談室",
     images: [
-      "https://mysterious-bunny.vercel.app/ogc_image.png",
+      "https://mysterious-bunny.vercel.app/ogp.png",
     ],
     url: "https://mysterious-bunny.vercel.app/",
   },
