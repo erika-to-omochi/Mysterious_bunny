@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
 import Script from 'next/script';
-import * as gtag from '../lib/gtag';
+import * as gtag from './lib/gtag';
 
 export const metadata = {
   title: "Mysterious Bunny",
