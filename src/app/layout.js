@@ -1,7 +1,9 @@
 import './globals.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import Head from 'next/head'; // 修正: `Head` を使用
+import Head from 'next/head';
+import Script from 'next/script';
+import * as gtag from '../lib/gtag';
 
 export const metadata = {
   title: "Mysterious Bunny",
@@ -34,6 +36,24 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
+      <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+        />
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
         {/* Open Graphメタタグ */}
         <meta property="og:title" content={metadata.openGraph.title} />
         <meta property="og:description" content={metadata.openGraph.description} />
