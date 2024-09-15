@@ -48,11 +48,13 @@ const OmochiLoveQuiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(null);
   const [score, setScore] = useState(0);
   const [quizFinished, setQuizFinished] = useState(false);
+  const [currentAnswer, setCurrentAnswer] = useState(null);
 
   // 現在の質問を更新する
   useEffect(() => {
     if (questionIndex < questions.length) {
       setCurrentQuestion(questions[questionIndex]);
+      setCurrentAnswer(null);
     } else {
       setQuizFinished(true);
     }
@@ -63,7 +65,10 @@ const OmochiLoveQuiz = () => {
     if (option === currentQuestion.correct) {
       setScore(score + 1);
     }
+    setCurrentAnswer(currentQuestion.correct); // 正しい答えを表示する
+    setTimeout(() => {
     setQuestionIndex(questionIndex + 1);
+    }, 1200);
   };
 
   // Twitter共有用リンク
@@ -107,6 +112,11 @@ const OmochiLoveQuiz = () => {
                     {option}
                   </button>
                 ))}
+                {currentAnswer && (
+                  <p className="mt-4 text-sm text-gray-600">
+                    正解: {currentAnswer}
+                  </p>
+                )}
               </div>
             </motion.div>
           ) : (
