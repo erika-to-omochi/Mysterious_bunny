@@ -64,7 +64,7 @@ export default function RomanceBot() {
           type="text"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="border border-gray-300 px-3 py-2 w-full rounded-xl focus:ring-2 focus:ring-custom-color outline-none transition-all duration-200"
+          className="border border-gray-300 px-3 py-2 w-full rounded-xl focus:ring-2 focus:ring-custom-color outline-none transition-all duration-200 text-[#645345]"
           placeholder="恋愛相談を書いてください..."
         />
         <button
